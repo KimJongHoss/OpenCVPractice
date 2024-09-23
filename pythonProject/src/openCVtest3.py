@@ -261,7 +261,7 @@ from numpy.ma.testutils import approx
 #윤곽 탐지 및 분석2
 #윤곽 탐지 및 분석
 
-img = cv2.imread("testRamen.jpg")
+img = cv2.imread("../image/testRamen.jpg")
 
 #이진화
 gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

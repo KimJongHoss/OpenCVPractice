@@ -158,7 +158,7 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 
-img = cv2.imread("testImage.jpg")
+img = cv2.imread("../image/testImage.jpg")
 
 B, G, R = cv2.split(img)
 

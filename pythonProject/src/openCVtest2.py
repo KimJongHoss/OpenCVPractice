@@ -220,7 +220,7 @@ import matplotlib.pyplot as plt
 
 #경계 검출 : 가우시안 블러, Sobel, 히스테리시스 임계값 처리
 
-img = cv2.imread("testRobot.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("../image/testRobot.jpg", cv2.IMREAD_GRAYSCALE)
 
 canny_edges = cv2.Canny(img, 100, 200)
 

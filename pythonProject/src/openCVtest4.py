@@ -305,7 +305,7 @@ plt.rcParams['axes.unicode_minus'] =False
 # GrabCut 적용
 
 # 이미지 로드
-img = cv2.imread("mainImage.png")
+img = cv2.imread("../image/mainImage.png")
 mask = np.zeros(img.shape[:2], np.uint8)
 
 # 사전 정의된 배경 및 전경 모델 생성

@@ -123,8 +123,8 @@ plt.rcParams['axes.unicode_minus'] =False
 # FLANN
 
 # 이미지 로드
-img1 = cv2.imread('orange2.png', cv2.IMREAD_GRAYSCALE)
-img2 = cv2.imread('apple2.png', cv2.IMREAD_GRAYSCALE)
+img1 = cv2.imread('../image/orange2.png', cv2.IMREAD_GRAYSCALE)
+img2 = cv2.imread('../image/apple2.png', cv2.IMREAD_GRAYSCALE)
 
 # SIFT 검출기 생성
 sift = cv2.SIFT_create()
