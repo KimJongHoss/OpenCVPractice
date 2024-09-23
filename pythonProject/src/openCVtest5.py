@@ -120,7 +120,59 @@ plt.rcParams['axes.unicode_minus'] =False
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
 
-# FLANN
+# # FLANN
+#
+# # 이미지 로드
+# img1 = cv2.imread('../image/orange2.png', cv2.IMREAD_GRAYSCALE)
+# img2 = cv2.imread('../image/apple2.png', cv2.IMREAD_GRAYSCALE)
+#
+# # SIFT 검출기 생성
+# sift = cv2.SIFT_create()
+#
+# # 특징점과 디스크립터 계산
+# keypoints1, descriptors1 = sift.detectAndCompute(img1, None)
+# keypoints2, descriptors2 = sift.detectAndCompute(img2, None)
+#
+# # FLANN 매처 생성 및 매칭 수행
+# index_params = dict(algorithm=1, trees=5)  # 'algorithms'를 'algorithm'으로 수정
+# search_params = dict(checks=50)
+# flann = cv2.FlannBasedMatcher(index_params, search_params)
+#
+# # k-NN 매칭 수행
+# matches = flann.knnMatch(descriptors1, descriptors2, k=2)
+#
+# # 매칭 결과 필터링 (Lowe's ratio test)
+# good_matches = []
+# for m, n in matches:
+#     if m.distance < 0.7 * n.distance:
+#         good_matches.append(m)
+#
+# # 매칭 결과 시각화
+# img_matches = cv2.drawMatches(img1, keypoints1, img2, keypoints2, good_matches[:30], None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
+#
+# # 결과 이미지 표시
+# cv2.imshow('Good Matches', img_matches)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
+
+# # 드로잉 키포인트
+#
+# # 이미지 읽기
+# img = cv2.imread("../image/testRamen.jpg")
+#
+# # SIFT 특징점 검출기 생성
+# sift = cv2.SIFT_create()
+#
+# # 특징점 검출
+# keypoints, descriptors = sift.detectAndCompute(img, None)
+#
+# # 결과 이미지 보여주기
+# image_with_keypoints = cv2.drawKeypoints(img, keypoints, None, color=(0,255,0))
+# cv2.imshow("keypoints", image_with_keypoints)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
+
+# 드로잉 매치
 
 # 이미지 로드
 img1 = cv2.imread('../image/orange2.png', cv2.IMREAD_GRAYSCALE)
@@ -132,25 +184,10 @@ sift = cv2.SIFT_create()
 # 특징점과 디스크립터 계산
 keypoints1, descriptors1 = sift.detectAndCompute(img1, None)
 keypoints2, descriptors2 = sift.detectAndCompute(img2, None)
-
-# FLANN 매처 생성 및 매칭 수행
-index_params = dict(algorithm=1, trees=5)  # 'algorithms'를 'algorithm'으로 수정
-search_params = dict(checks=50)
-flann = cv2.FlannBasedMatcher(index_params, search_params)
-
-# k-NN 매칭 수행
-matches = flann.knnMatch(descriptors1, descriptors2, k=2)
-
-# 매칭 결과 필터링 (Lowe's ratio test)
 good_matches = []
-for m, n in matches:
-    if m.distance < 0.7 * n.distance:
-        good_matches.append(m)
 
-# 매칭 결과 시각화
-img_matches = cv2.drawMatches(img1, keypoints1, img2, keypoints2, good_matches[:30], None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
-
-# 결과 이미지 표시
-cv2.imshow('Good Matches', img_matches)
+matched_image = cv2.drawMatches(img1, keypoints1, img2, keypoints2,
+                                good_matches, None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
+cv2.imshow("Matches", matched_image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
