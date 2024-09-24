@@ -158,31 +158,31 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 
-img = cv2.imread("../image/testImage.jpg")
-
-B, G, R = cv2.split(img)
-
-plt.figure(figsize=(10, 5))
-
-plt.subplot(1, 3, 1)
-plt.imshow(B, cmap="gray")
-plt.title("Blue Channel")
-
-plt.subplot(1, 3, 2)
-plt.imshow(G, cmap="gray")
-plt.title("Green Channel")
-
-plt.subplot(1, 3, 3)
-plt.imshow(R, cmap="gray")
-plt.title("Red Channel")
-
-plt.show()
-
-merged_image = cv2.merge([B, G, R])
-
-plt.show(cv2.cvtColor(merged_image, cv2.COLOR_BGR2RGB))
-plt.title("Merged Image")
-plt.show()
+# img = cv2.imread("../image/testImage.jpg")
+#
+# B, G, R = cv2.split(img)
+#
+# plt.figure(figsize=(10, 5))
+#
+# plt.subplot(1, 3, 1)
+# plt.imshow(B, cmap="gray")
+# plt.title("Blue Channel")
+#
+# plt.subplot(1, 3, 2)
+# plt.imshow(G, cmap="gray")
+# plt.title("Green Channel")
+#
+# plt.subplot(1, 3, 3)
+# plt.imshow(R, cmap="gray")
+# plt.title("Red Channel")
+#
+# plt.show()
+#
+# merged_image = cv2.merge([B, G, R])
+#
+# plt.show(cv2.cvtColor(merged_image, cv2.COLOR_BGR2RGB))
+# plt.title("Merged Image")
+# plt.show()
 
 # img = cv2.imread("testRamen.jpg")
 # hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
@@ -197,3 +197,4 @@ plt.show()
 # cv2.imshow("Red Segment", red_segment)
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
+
