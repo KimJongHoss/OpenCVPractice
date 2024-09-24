@@ -6,5 +6,5 @@
  3) OpenCVtest3 : 형태학 변환, 윤곽 탐지 관련 예제입니다.
  4) OpenCVtest4 : 히스토그램, 이미지 피라미드, 템플릿, 이미지 분할 관련 예제입니다.
  5) OpenCVtest5 : Haar Cascades, 특징 감지 관련 예제입니다.
- 6) OpenCVtest6 : 
+ 6) OpenCVtest6 : 카메라 보정, 광류, 모션 감지 관련 예제입니다.
  7) OpenCVtest7 : 
